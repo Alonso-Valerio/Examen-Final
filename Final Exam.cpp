@@ -6,7 +6,7 @@ const int MAX_EMPLEADOS = 10;
 const int MAX_PROYECTOS = 10;
 const int MAX_ASIGNACIONES = 20;
 
-// Validaciones globales
+
 char nombresProyectosRegistrados[MAX_PROYECTOS][50];
 int totalNombresRegistrados = 0;
 
@@ -36,7 +36,7 @@ public:
         cout << "Telefono: "; cin.getline(telefono, 15);
         cout << "Correo: "; cin.getline(correo, 50);
 
-        // Validar correo unico
+        
         for (int i = 0; i < totalCorreosRegistrados; i++) {
             if (strcmp(correo, correosRegistrados[i]) == 0) {
                 cout << "Correo ya registrado. Empleado no agregado.\n\n";
@@ -45,7 +45,7 @@ public:
             }
         }
 
-        // Guardar correo en lista de correos usados
+       
         strcpy(correosRegistrados[totalCorreosRegistrados], correo);
         totalCorreosRegistrados++;
     }
@@ -82,7 +82,7 @@ public:
         cin.ignore();
         cout << "Nombre: "; cin.getline(nombre, 50);
 
-        // Validar nombre unico
+       
         for (int i = 0; i < totalNombresRegistrados; i++) {
             if (strcmp(nombre, nombresProyectosRegistrados[i]) == 0) {
                 cout << "Nombre ya registrado. Proyecto no agregado.\n\n";
@@ -91,7 +91,7 @@ public:
             }
         }
 
-        // Guardar nombre en lista de nombres usados
+       
         strcpy(nombresProyectosRegistrados[totalNombresRegistrados], nombre);
         totalNombresRegistrados++;
 
